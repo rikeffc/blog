@@ -8,6 +8,8 @@
                 <div class="card-header">Categoria</div>
 
                 <div class="card-body">
+
+                    <a class="btn btn-success" href="{{ url('categoria/create')}}">CRIAR</a>
                     <table>
                         <tr>
                           <th>ID</th>
@@ -18,7 +20,7 @@
                        <tr>
                         <td>{{$value->id}}</td>
                         <td>{{$value->nome}}</td>
-                        <td><a href="{{ url('categoria/' . $value->id)}}">Visualizar</td>
+                        <td><a class="btn btn-info" href="{{ url('categoria/' . $value->id)}}">Visualizar</td>
                       </tr>
                        @endforeach
 
