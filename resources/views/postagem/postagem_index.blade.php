@@ -5,10 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Categoria</div>
+                <div class="card-header">Postagem</div>
                 <script>
                     function confirmDelete() {
-                        return confirm('Tem certeza que deseja apagar esta categoria?');
+                        return confirm('Tem certeza que deseja apagar esta postagem?');
                     }
                 </script>
 
@@ -16,7 +16,7 @@
 
                 <div class="card-body">
 
-                    <a class="btn btn-success" href="{{ url('categoria/create')}}">CRIAR</a>
+                    <a class="btn btn-success" href="{{ url('postagem/create')}}">CRIAR</a>
 
                     @if (session('message'))
                         <div class="alert alert-success">
@@ -27,19 +27,21 @@
                     <table class="table">
                         <tr>
                           <th>ID</th>
-                          <th>Nome</th>
+                          <th>Categoria</th>
+                          <th>título</th>
                           <th>Ações</th>
                         </tr>
 
-                       @foreach ( $categorias as $value )
+                       @foreach ( $postagens as $value )
                        <tr>
                         <td>{{$value->id}}</td>
-                        <td>{{$value->nome}}</td>
+                        <td>{{($value->categoria)->nome}}</td>
+                        <td>{{$value->titulo}}</td>
 
                         <td>
-                            <a class="btn btn-info" href="{{ url('categoria/' . $value->id)}}">Visualizar</a>
-                        <a class="btn btn-warning" href="{{ url('categoria/' . $value->id. '/edit') }}">Editar</a>
-                        <form action="{{ url('categoria/' . $value->id) }}" method="POST" onsubmit='return confirmDelete()' style="display:inline;">
+                            <a class="btn btn-info" href="{{ url('postagem/' . $value->id)}}">Visualizar</a>
+                        <a class="btn btn-warning" href="{{ url('postagem/' . $value->id. '/edit') }}">Editar</a>
+                        <form action="{{ url('postagem/' . $value->id) }}" method="POST" onsubmit='return confirmDelete()' style="display:inline;">
 
                             @method('DELETE')
                             @csrf

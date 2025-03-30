@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Categoria - CREATE</div>
+                <div class="card-header">Categoria - EDIT</div>
 
                 @if ($errors->any())
     <div class="alert alert-danger">
@@ -18,11 +18,14 @@
 @endif
 
                 <div class="card-body">
-        <form action="{{ url('categoria')}}" method="POST">
+        <form action="{{ url('categoria/' . $categoria->id)}}" method="POST">
+            @method('PUT')
             @csrf
+
+
             <div class="form-group">
                 <label>Nome:</label>
-                <input type="text" name="nome" id="nome"  class="form-control" >
+                <input type="text" name="nome" id="nome"  value=" {{$categoria->nome}} " class="form-control" >
             </div>
                 <button type="submit" class="btn btn-success">Salvar</button>
 
