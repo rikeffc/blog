@@ -35,12 +35,12 @@
                 @endforeach
             </select>
             <label>Título:</label>
-            <input type="text" value="{{ $postagem->titulo }}" name="título" id="título"  class="form-control">
+            <input type="text" value="{{ $postagem->titulo }}" name="titulo" id="título"  class="form-control">
 
               </select>
 
             <label>Descrição:</label>
-            <textarea id="descricao" name="story" rows="5" cols="33" class="form-control">
+            <textarea id="descricao" name="descricao" rows="5" cols="33" class="form-control">
                 {{ $postagem->descricao }}
 
                 </textarea>
