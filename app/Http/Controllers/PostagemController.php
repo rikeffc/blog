@@ -15,7 +15,6 @@ class PostagemController extends Controller
     {
         $postagens = Postagem::orderBy('titulo','ASC')->get();
         return view('postagem.postagem_index', compact('postagens'));
-
     }
 
     /**

@@ -38,7 +38,6 @@ class CategoriaController extends Controller
             'nome' => 'required|min:5|max:50',
         ], $messages);
 
-
         $categoria = new Categoria();
         $categoria->nome = $request->nome;
         $categoria->save();
